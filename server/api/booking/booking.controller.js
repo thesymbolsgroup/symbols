@@ -1,16 +1,16 @@
  /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/Hairdresser              ->  index
- * POST    /api/Hairdresser              ->  create
- * GET     /api/Hairdresser/:id          ->  show
- * PUT     /api/Hairdresser/:id          ->  update
- * DELETE  /api/Hairdresser/:id          ->  destroy
+ * GET     /api/Bookings              ->  index
+ * POST    /api/Bookings              ->  create
+ * GET     /api/Bookings/:id          ->  show
+ * PUT     /api/Bookings/:id          ->  update
+ * DELETE  /api/Bookings/:id          ->  destroy
  */
 
 'use strict';
 
 import _ from 'lodash';
-import Hairdresser from './hairdresser.model';
+import Booking from './booking.model';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -59,43 +59,43 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets a list of Hairdressers
+// Gets a list of Bookings
 export function index(req, res) {
-  return Hairdresser.find().exec()
+  return Booking.find().exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Gets a single Hairdresser from the DB
+// Gets a single Booking from the DB
 export function show(req, res) {
-  return Hairdresser.findById(req.params.id).exec()
+  return Booking.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Creates a new Hairdresser in the DB
+// Creates a new Booking in the DB
 export function create(req, res) {
-  return Hairdresser.create(req.body)
+  return Booking.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
-// Updates an existing Hairdresser in the DB
+// Updates an existing Booking in the DB
 export function update(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-  return Hairdresser.findById(req.params.id).exec()
+  return Booking.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(saveUpdates(req.body))
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Deletes a Hairdresser from the DB
+// Deletes a Booking from the DB
 export function destroy(req, res) {
-  return Hairdresser.findById(req.params.id).exec()
+  return Booking.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
     .catch(handleError(res));
