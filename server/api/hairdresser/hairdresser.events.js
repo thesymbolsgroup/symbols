@@ -1,5 +1,5 @@
 /**
- * Thing model events
+ * Hairdresser model events
  */
 
 'use strict';

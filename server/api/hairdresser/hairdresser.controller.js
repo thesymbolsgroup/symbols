@@ -1,10 +1,10 @@
  /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/Hairdresser              ->  index
- * POST    /api/Hairdresser              ->  create
- * GET     /api/Hairdresser/:id          ->  show
- * PUT     /api/Hairdresser/:id          ->  update
- * DELETE  /api/Hairdresser/:id          ->  destroy
+ * GET     /api/hairdressers              ->  index
+ * POST    /api/hairdressers              ->  create
+ * GET     /api/hairdressers/:id          ->  show
+ * PUT     /api/hairdressers/:id          ->  update
+ * DELETE  /api/hairdressers/:id          ->  destroy
  */
 
 'use strict';

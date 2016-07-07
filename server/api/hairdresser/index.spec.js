@@ -34,7 +34,7 @@ describe('Hairdresser API Router:', function() {
     expect(hairdresserIndex).to.equal(routerStub);
   });
 
-  describe('GET /api/hairdresser', function() {
+  describe('GET /api/hairdressers', function() {
 
     it('should route to hairdresser.controller.index', function() {
       expect(routerStub.get
@@ -44,7 +44,7 @@ describe('Hairdresser API Router:', function() {
 
   });
 
-  describe('GET /api/hairdresser/:id', function() {
+  describe('GET /api/hairdressers/:id', function() {
 
     it('should route to hairdresser.controller.show', function() {
       expect(routerStub.get
@@ -54,7 +54,7 @@ describe('Hairdresser API Router:', function() {
 
   });
 
-  describe('POST /api/hairdresser', function() {
+  describe('POST /api/hairdressers', function() {
 
     it('should route to hairdresser.controller.create', function() {
       expect(routerStub.post
@@ -64,7 +64,7 @@ describe('Hairdresser API Router:', function() {
 
   });
 
-  describe('PUT /api/hairdresser/:id', function() {
+  describe('PUT /api/hairdressers/:id', function() {
 
     it('should route to hairdresser.controller.update', function() {
       expect(routerStub.put
@@ -74,7 +74,7 @@ describe('Hairdresser API Router:', function() {
 
   });
 
-  describe('PATCH /api/hairdresser/:id', function() {
+  describe('PATCH /api/hairdressers/:id', function() {
 
     it('should route to hairdresser.controller.update', function() {
       expect(routerStub.patch
@@ -84,7 +84,7 @@ describe('Hairdresser API Router:', function() {
 
   });
 
-  describe('DELETE /api/hairdresser/:id', function() {
+  describe('DELETE /api/hairdressers/:id', function() {
 
     it('should route to hairdresser.controller.destroy', function() {
       expect(routerStub.delete

@@ -7,33 +7,33 @@ var newHairdresser;
 
 describe('Hairdresser API:', function() {
 
-  describe('GET /api/hairdresser', function() {
-    var hairdresser;
+  describe('GET /api/hairdressers', function() {
+    var hairdressers;
 
     beforeEach(function(done) {
       request(app)
-        .get('/api/hairdresser')
+        .get('/api/hairdressers')
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
           if (err) {
             return done(err);
           }
-          hairdresser = res.body;
+          hairdressers = res.body;
           done();
         });
     });
 
     it('should respond with JSON array', function() {
-      expect(hairdresser).to.be.instanceOf(Array);
+      expect(hairdressers).to.be.instanceOf(Array);
     });
 
   });
 
-  describe('POST /api/hairdresser', function() {
+  describe('POST /api/hairdressers', function() {
     beforeEach(function(done) {
       request(app)
-        .post('/api/hairdresser')
+        .post('/api/hairdressers')
         .send({
           name: 'New Hairdresser',
           info: 'This is the brand new hairdresser!!!'
@@ -56,12 +56,12 @@ describe('Hairdresser API:', function() {
 
   });
 
-  describe('GET /api/hairdresser/:id', function() {
+  describe('GET /api/hairdressers/:id', function() {
     var hairdresser;
 
     beforeEach(function(done) {
       request(app)
-        .get('/api/hairdresser/' + newHairdresser._id)
+        .get('/api/hairdressers/' + newHairdresser._id)
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
@@ -84,12 +84,12 @@ describe('Hairdresser API:', function() {
 
   });
 
-  describe('PUT /api/hairdresser/:id', function() {
+  describe('PUT /api/hairdressers/:id', function() {
     var updatedHairdresser;
 
     beforeEach(function(done) {
       request(app)
-        .put('/api/hairdresser/' + newHairdresser._id)
+        .put('/api/hairdressers/' + newHairdresser._id)
         .send({
           name: 'Updated Hairdresser',
           info: 'This is the updated hairdresser!!!'
@@ -116,11 +116,11 @@ describe('Hairdresser API:', function() {
 
   });
 
-  describe('DELETE /api/hairdresser/:id', function() {
+  describe('DELETE /api/hairdressers/:id', function() {
 
     it('should respond with 204 on successful removal', function(done) {
       request(app)
-        .delete('/api/hairdresser/' + newHairdresser._id)
+        .delete('/api/hairdressers/' + newHairdresser._id)
         .expect(204)
         .end((err, res) => {
           if (err) {
@@ -132,7 +132,7 @@ describe('Hairdresser API:', function() {
 
     it('should respond with 404 when hairdresser does not exist', function(done) {
       request(app)
-        .delete('/api/hairdresser/' + newHairdresser._id)
+        .delete('/api/hairdressers/' + newHairdresser._id)
         .expect(404)
         .end((err, res) => {
           if (err) {
