@@ -11,8 +11,9 @@ export default function(app) {
   // Insert routes below
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
-  app.use('/api/hairdresser', require('./api/hairdresser'));
-    app.use('/api/booking', require('./api/booking'));
+  app.use('/api/hairdressers', require('./api/hairdresser'));
+  app.use('/api/bookings', require('./api/booking'));
+  app.use('/api/reviews', require('./api/review'));
 
 
   app.use('/auth', require('./auth').default);
