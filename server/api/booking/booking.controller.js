@@ -1,10 +1,10 @@
  /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/Bookings              ->  index
- * POST    /api/Bookings              ->  create
- * GET     /api/Bookings/:id          ->  show
- * PUT     /api/Bookings/:id          ->  update
- * DELETE  /api/Bookings/:id          ->  destroy
+ * GET     /api/bookings              ->  index
+ * POST    /api/bookings              ->  create
+ * GET     /api/bookings/:id          ->  show
+ * PUT     /api/bookings/:id          ->  update
+ * DELETE  /api/bookings/:id          ->  destroy
  */
 
 'use strict';

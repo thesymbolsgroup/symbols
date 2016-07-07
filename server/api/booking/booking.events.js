@@ -1,5 +1,5 @@
 /**
- * Thing model events
+ * Booking model events
  */
 
 'use strict';
