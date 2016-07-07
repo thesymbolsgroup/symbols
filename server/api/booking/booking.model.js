@@ -3,15 +3,21 @@
 import mongoose from 'mongoose';
 
 var BookingSchema = new mongoose.Schema({
-  name: String,
-  time: Date,
+  bookingCreationtime: Date,
   startTime: Date,
   endTime: Date,
   bookingState: String,
-  address: String,
-    
-  info: String,
-  active: Boolean
+  price: Number,
+  address: {
+      country: String,
+      lineOne: String,
+      lineTwo: String,
+      city: String,
+      county: String,
+      postcode: String,
+  }
 });
+
+//additionalComments: String
 
 export default mongoose.model('Booking', BookingSchema);

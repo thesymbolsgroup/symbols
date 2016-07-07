@@ -35,8 +35,20 @@ describe('Booking API:', function() {
       request(app)
         .post('/api/bookings')
         .send({
-          name: 'New Booking',
-          info: 'This is the brand new booking!!!'
+          bookingCreationtime: '2016-07-07T15:06:00.000Z',
+          startTime: '2016-07-07T15:06:00.000Z',
+          endTime: '2016-07-07T15:06:00.000Z',
+          bookingState: 'pending',
+          price: 20,
+            address: {
+                country: 'United Kingdom',
+                lineOne: 'London Road',
+                lineTwo: 'Flat 5',
+                city: 'London',
+                county: 'London',
+                postcode: 'SW6 3ER',
+            }
+
         })
         .expect(201)
         .expect('Content-Type', /json/)
@@ -50,8 +62,12 @@ describe('Booking API:', function() {
     });
 
     it('should respond with the newly created booking', function() {
-      expect(newBooking.name).to.equal('New Booking');
-      expect(newBooking.info).to.equal('This is the brand new booking!!!');
+      expect(newBooking.bookingCreationtime).to.equal('2016-07-07T15:06:00.000Z');
+      expect(newBooking.startTime).to.equal('2016-07-07T15:06:00.000Z');
+      expect(newBooking.endTime).to.equal('2016-07-07T15:06:00.000Z');
+      expect(newBooking.bookingState).to.equal('pending');
+      expect(newBooking.price).to.equal(20);
+      expect(newBooking.address.country).to.equal('United Kingdom'); 
     });
 
   });
@@ -78,8 +94,7 @@ describe('Booking API:', function() {
     });
 
     it('should respond with the requested booking', function() {
-      expect(booking.name).to.equal('New Booking');
-      expect(booking.info).to.equal('This is the brand new booking!!!');
+          expect(newBooking.address.country).to.equal('United Kingdom');
     });
 
   });
@@ -91,8 +106,19 @@ describe('Booking API:', function() {
       request(app)
         .put('/api/bookings/' + newBooking._id)
         .send({
-          name: 'Updated Booking',
-          info: 'This is the updated booking!!!'
+          bookingCreationtime: '2016-07-07T15:06:00.000Z',
+          startTime: '2016-07-07T15:06:00.000Z',
+          endTime: '2016-07-07T15:06:00.000Z',
+          bookingState: 'pending',
+          price: 20,
+            address: {
+                country: 'United Kingdom',
+                lineOne: 'London Road',
+                lineTwo: 'Flat 5',
+                city: 'London',
+                county: 'London',
+                postcode: 'SW6 3ER',
+            }
         })
         .expect(200)
         .expect('Content-Type', /json/)
@@ -110,8 +136,12 @@ describe('Booking API:', function() {
     });
 
     it('should respond with the updated booking', function() {
-      expect(updatedBooking.name).to.equal('Updated Booking');
-      expect(updatedBooking.info).to.equal('This is the updated booking!!!');
+        expect(newBooking.bookingCreationtime).to.equal('2016-07-07T15:06:00.000Z');
+      expect(newBooking.startTime).to.equal('2016-07-07T15:06:00.000Z');
+      expect(newBooking.endTime).to.equal('2016-07-07T15:06:00.000Z');
+      expect(newBooking.bookingState).to.equal('pending');
+      expect(newBooking.price).to.equal(20);
+      expect(newBooking.address.country).to.equal('United Kingdom');
     });
 
   });
