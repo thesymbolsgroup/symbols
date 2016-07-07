@@ -2,12 +2,12 @@
 
 var proxyquire = require('proxyquire').noPreserveCache();
 
-var bookingCtrlStub = {
-  index: 'bookingCtrl.index',
-  show: 'bookingCtrl.show',
-  create: 'bookingCtrl.create',
-  update: 'bookingCtrl.update',
-  destroy: 'bookingCtrl.destroy'
+var reviewCtrlStub = {
+  index: 'reviewCtrl.index',
+  show: 'reviewCtrl.show',
+  create: 'reviewCtrl.create',
+  update: 'reviewCtrl.update',
+  destroy: 'reviewCtrl.destroy'
 };
 
 var routerStub = {
@@ -19,76 +19,76 @@ var routerStub = {
 };
 
 // require the index with our stubbed out modules
-var bookingIndex = proxyquire('./index.js', {
+var reviewIndex = proxyquire('./index.js', {
   'express': {
     Router: function() {
       return routerStub;
     }
   },
-  './booking.controller': bookingCtrlStub
+  './review.controller': reviewCtrlStub
 });
 
-describe('Booking API Router:', function() {
+describe('Review API Router:', function() {
 
   it('should return an express router instance', function() {
-    expect(bookingIndex).to.equal(routerStub);
+    expect(reviewIndex).to.equal(routerStub);
   });
 
-  describe('GET /api/booking', function() {
+  describe('GET /api/reviews', function() {
 
-    it('should route to booking.controller.index', function() {
+    it('should route to review.controller.index', function() {
       expect(routerStub.get
-        .withArgs('/', 'bookingCtrl.index')
+        .withArgs('/', 'reviewCtrl.index')
         ).to.have.been.calledOnce;
     });
 
   });
 
-  describe('GET /api/booking/:id', function() {
+  describe('GET /api/reviews/:id', function() {
 
-    it('should route to booking.controller.show', function() {
+    it('should route to review.controller.show', function() {
       expect(routerStub.get
-        .withArgs('/:id', 'bookingCtrl.show')
+        .withArgs('/:id', 'reviewCtrl.show')
         ).to.have.been.calledOnce;
     });
 
   });
 
-  describe('POST /api/booking', function() {
+  describe('POST /api/reviews', function() {
 
-    it('should route to booking.controller.create', function() {
+    it('should route to review.controller.create', function() {
       expect(routerStub.post
-        .withArgs('/', 'bookingCtrl.create')
+        .withArgs('/', 'reviewCtrl.create')
         ).to.have.been.calledOnce;
     });
 
   });
 
-  describe('PUT /api/booking/:id', function() {
+  describe('PUT /api/reviews/:id', function() {
 
-    it('should route to booking.controller.update', function() {
+    it('should route to review.controller.update', function() {
       expect(routerStub.put
-        .withArgs('/:id', 'bookingCtrl.update')
+        .withArgs('/:id', 'reviewCtrl.update')
         ).to.have.been.calledOnce;
     });
 
   });
 
-  describe('PATCH /api/booking/:id', function() {
+  describe('PATCH /api/reviews/:id', function() {
 
-    it('should route to booking.controller.update', function() {
+    it('should route to review.controller.update', function() {
       expect(routerStub.patch
-        .withArgs('/:id', 'bookingCtrl.update')
+        .withArgs('/:id', 'reviewCtrl.update')
         ).to.have.been.calledOnce;
     });
 
   });
 
-  describe('DELETE /api/booking/:id', function() {
+  describe('DELETE /api/reviews/:id', function() {
 
-    it('should route to booking.controller.destroy', function() {
+    it('should route to review.controller.destroy', function() {
       expect(routerStub.delete
-        .withArgs('/:id', 'bookingCtrl.destroy')
+        .withArgs('/:id', 'reviewCtrl.destroy')
         ).to.have.been.calledOnce;
     });
 
