@@ -2,12 +2,12 @@
 
 var proxyquire = require('proxyquire').noPreserveCache();
 
-var hairdresserCtrlStub = {
-  index: 'hairdresserCtrl.index',
-  show: 'hairdresserCtrl.show',
-  create: 'hairdresserCtrl.create',
-  update: 'hairdresserCtrl.update',
-  destroy: 'hairdresserCtrl.destroy'
+var bookingCtrlStub = {
+  index: 'bookingCtrl.index',
+  show: 'bookingCtrl.show',
+  create: 'bookingCtrl.create',
+  update: 'bookingCtrl.update',
+  destroy: 'bookingCtrl.destroy'
 };
 
 var routerStub = {
@@ -19,76 +19,76 @@ var routerStub = {
 };
 
 // require the index with our stubbed out modules
-var hairdresserIndex = proxyquire('./index.js', {
+var bookingIndex = proxyquire('./index.js', {
   'express': {
     Router: function() {
       return routerStub;
     }
   },
-  './hairdresser.controller': hairdresserCtrlStub
+  './booking.controller': bookingCtrlStub
 });
 
-describe('Hairdresser API Router:', function() {
+describe('Booking API Router:', function() {
 
   it('should return an express router instance', function() {
-    expect(hairdresserIndex).to.equal(routerStub);
+    expect(bookingIndex).to.equal(routerStub);
   });
 
-  describe('GET /api/hairdresser', function() {
+  describe('GET /api/booking', function() {
 
-    it('should route to hairdresser.controller.index', function() {
+    it('should route to booking.controller.index', function() {
       expect(routerStub.get
-        .withArgs('/', 'hairdresserCtrl.index')
+        .withArgs('/', 'bookingCtrl.index')
         ).to.have.been.calledOnce;
     });
 
   });
 
-  describe('GET /api/hairdresser/:id', function() {
+  describe('GET /api/booking/:id', function() {
 
-    it('should route to hairdresser.controller.show', function() {
+    it('should route to booking.controller.show', function() {
       expect(routerStub.get
-        .withArgs('/:id', 'hairdresserCtrl.show')
+        .withArgs('/:id', 'bookingCtrl.show')
         ).to.have.been.calledOnce;
     });
 
   });
 
-  describe('POST /api/hairdresser', function() {
+  describe('POST /api/booking', function() {
 
-    it('should route to hairdresser.controller.create', function() {
+    it('should route to booking.controller.create', function() {
       expect(routerStub.post
-        .withArgs('/', 'hairdresserCtrl.create')
+        .withArgs('/', 'bookingCtrl.create')
         ).to.have.been.calledOnce;
     });
 
   });
 
-  describe('PUT /api/hairdresser/:id', function() {
+  describe('PUT /api/booking/:id', function() {
 
-    it('should route to hairdresser.controller.update', function() {
+    it('should route to booking.controller.update', function() {
       expect(routerStub.put
-        .withArgs('/:id', 'hairdresserCtrl.update')
+        .withArgs('/:id', 'bookingCtrl.update')
         ).to.have.been.calledOnce;
     });
 
   });
 
-  describe('PATCH /api/hairdresser/:id', function() {
+  describe('PATCH /api/booking/:id', function() {
 
-    it('should route to hairdresser.controller.update', function() {
+    it('should route to booking.controller.update', function() {
       expect(routerStub.patch
-        .withArgs('/:id', 'hairdresserCtrl.update')
+        .withArgs('/:id', 'bookingCtrl.update')
         ).to.have.been.calledOnce;
     });
 
   });
 
-  describe('DELETE /api/hairdresser/:id', function() {
+  describe('DELETE /api/booking/:id', function() {
 
-    it('should route to hairdresser.controller.destroy', function() {
+    it('should route to booking.controller.destroy', function() {
       expect(routerStub.delete
-        .withArgs('/:id', 'hairdresserCtrl.destroy')
+        .withArgs('/:id', 'bookingCtrl.destroy')
         ).to.have.been.calledOnce;
     });
 
