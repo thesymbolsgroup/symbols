@@ -8,4 +8,4 @@ var RewardSchema = new mongoose.Schema({
   active: Boolean
 });
 
-export default mongoose.model('Salon', SalonSchema);
+export default mongoose.model('Reward', RewardSchema);
