@@ -14,6 +14,7 @@ export default function(app) {
   app.use('/api/hairdressers', require('./api/hairdresser'));
   app.use('/api/bookings', require('./api/booking'));
   app.use('/api/reviews', require('./api/review'));
+  app.use('/api/salons', require('./api/salon'));
   
 
 
