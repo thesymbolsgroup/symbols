@@ -1,5 +1,7 @@
+
 var FacebookTokenStrategy = require('passport-facebook-token');
- 
+var User = require('../app/models/user');
+
 passport.use(new FacebookTokenStrategy({
     clientID: '2054447374780894',
     clientSecret: 'b29504bb1613f3c8ae2baac1694cbc50',
