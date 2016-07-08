@@ -15,6 +15,8 @@ export default function(app) {
   app.use('/api/bookings', require('./api/booking'));
   app.use('/api/reviews', require('./api/review'));
   app.use('/api/salons', require('./api/salon'));
+  app.use('/api/rewards', require('./api/reward'));
+  app.use('/api/messages', require('./api/message'));
   
 
 
