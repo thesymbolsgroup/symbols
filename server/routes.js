@@ -4,10 +4,8 @@
 
 'use strict';
 
-
 import errors from './components/errors';
 import path from 'path';
-import passport from 'passport';
 
 export default function(app) {
   // Insert routes below
@@ -37,12 +35,4 @@ export default function(app) {
     .get((req, res) => {
       res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
     });
-    
- 	app.get("/auth/facebook", passport.authenticate("facebook",{ scope : "email"}));
-	app.get("/auth/facebook/callback", 
-		passport.authenticate("facebook",{ failureRedirect: '/login'}),
-		function(req,res){
-			res.render("profile", {user : req.user});
-		}
-	);
 }

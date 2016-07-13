@@ -12,6 +12,6 @@ require('./facebook/passport').setup(User, config);
 var router = express.Router();
 
 router.use('/local', require('./local').default);
-//router.use('/facebook', require('./facebook').default);
+router.use('/facebook', require('./facebook').default);
 
 export default router;

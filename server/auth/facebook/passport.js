@@ -1,7 +1,6 @@
-/**
-import passport from 'passport';
+
 var FacebookTokenStrategy = require('passport-facebook-token');
-var User = require('..\..\api\user\user.model');
+var User = require('../app/models/user');
 
 passport.use(new FacebookTokenStrategy({
     clientID: '2054447374780894',
@@ -12,7 +11,7 @@ passport.use(new FacebookTokenStrategy({
       return done(error, user);
     });
   }
-)); */
+));
 
 /**import passport from 'passport';
 import {Strategy as LocalStrategy} from 'passport-local';
