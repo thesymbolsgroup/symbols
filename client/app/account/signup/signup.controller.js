@@ -37,5 +37,5 @@ class SignupController {
   }
 }
 
-angular.module('symbolsApp')
+angular.module('test3App')
   .controller('SignupController', SignupController);

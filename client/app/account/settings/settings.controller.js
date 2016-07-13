@@ -23,5 +23,5 @@ class SettingsController {
   }
 }
 
-angular.module('symbolsApp')
+angular.module('test3App')
   .controller('SettingsController', SettingsController);

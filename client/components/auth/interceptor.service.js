@@ -25,6 +25,6 @@
     };
   }
 
-  angular.module('symbolsApp.auth')
+  angular.module('test3App.auth')
     .factory('authInterceptor', authInterceptor);
 })();

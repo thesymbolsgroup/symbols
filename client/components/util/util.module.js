@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('symbolsApp.util', []);
+angular.module('test3App.util', []);

@@ -29,5 +29,5 @@ class LoginController {
   }
 }
 
-angular.module('symbolsApp')
+angular.module('test3App')
   .controller('LoginController', LoginController);

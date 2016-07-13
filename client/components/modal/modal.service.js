@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('symbolsApp')
+angular.module('test3App')
   .factory('Modal', function($rootScope, $uibModal) {
     /**
      * Opens a modal

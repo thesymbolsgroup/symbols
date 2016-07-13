@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('symbolsApp')
+angular.module('test3App')
   .directive('footer', function() {
     return {
       templateUrl: 'components/footer/footer.html',

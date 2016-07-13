@@ -16,5 +16,5 @@ class NavbarController {
   }
 }
 
-angular.module('symbolsApp')
+angular.module('test3App')
   .controller('NavbarController', NavbarController);

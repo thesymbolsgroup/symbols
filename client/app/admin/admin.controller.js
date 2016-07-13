@@ -14,6 +14,6 @@
     }
   }
 
-  angular.module('symbolsApp.admin')
+  angular.module('test3App.admin')
     .controller('AdminController', AdminController);
 })();

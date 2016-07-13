@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('symbolsApp')
+angular.module('test3App')
   .directive('navbar', () => ({
     templateUrl: 'components/navbar/navbar.html',
     restrict: 'E',

@@ -185,6 +185,6 @@
     return Auth;
   }
 
-  angular.module('symbolsApp.auth')
+  angular.module('test3App.auth')
     .factory('Auth', AuthService);
 })();

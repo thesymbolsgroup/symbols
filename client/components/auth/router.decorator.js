@@ -2,7 +2,7 @@
 
 (function() {
 
-  angular.module('symbolsApp.auth')
+  angular.module('test3App.auth')
     .run(function($rootScope, $location, Auth) {
       // Redirect to login if route requires auth and the user is not logged in, or doesn't have required role
       $rootScope.$on('$routeChangeStart', function(event, next) {

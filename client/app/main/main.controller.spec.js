@@ -3,14 +3,15 @@
 describe('Component: mainComponent', function() {
 
   // load the controller's module
-  beforeEach(module('symbolsApp'));
+  beforeEach(module('test3App'));
+  beforeEach(module('socketMock'));
 
   var scope;
   var mainComponent;
   var $httpBackend;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function(_$httpBackend_, $http, $componentController, $rootScope) {
+  beforeEach(inject(function(_$httpBackend_, $http, $componentController, $rootScope, socket) {
     $httpBackend = _$httpBackend_;
     $httpBackend.expectGET('/api/things')
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
@@ -18,7 +19,8 @@ describe('Component: mainComponent', function() {
     scope = $rootScope.$new();
     mainComponent = $componentController('main', {
       $http: $http,
-      $scope: scope
+      $scope: scope,
+      socket: socket
     });
   }));
 

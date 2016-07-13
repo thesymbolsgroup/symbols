@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('symbolsApp.admin', ['symbolsApp.auth', 'ngRoute']);
+angular.module('test3App.admin', ['test3App.auth', 'ngRoute']);

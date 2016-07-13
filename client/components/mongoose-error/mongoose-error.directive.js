@@ -4,7 +4,7 @@
  * Removes server error when user updates input
  */
 
-angular.module('symbolsApp')
+angular.module('test3App')
   .directive('mongooseError', function() {
     return {
       restrict: 'A',
