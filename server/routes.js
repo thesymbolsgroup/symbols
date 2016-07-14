@@ -11,7 +11,12 @@ export default function(app) {
   // Insert routes below
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
-
+  app.use('/api/bookings', require('./api/booking'));
+  app.use('/api/hairdressers', require('./api/hairdresser'));
+  app.use('/api/messages', require('./api/message'));
+  app.use('/api/reviews', require('./api/review'));
+  app.use('/api/rewards', require('./api/reward'));
+  app.use('/api/salons', require('./api/salon'));
   app.use('/auth', require('./auth').default);
 
   // All undefined asset or api routes should return a 404
